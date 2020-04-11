@@ -1,68 +1,42 @@
-import React, { Component } from 'react';
-import { Map, Marker, Popup } from "react-leaflet";
+import React, { useState } from 'react';
+import Map from "./Components/Map";
 import L from "leaflet";
-// import logo from './logo.svg';
-
-import icon from './Assets/Location_Icon.png';
-
-
-import MapboxLayer from "./MapboxLayer";
 import './App.css';
 
-const MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoiYWxleG5pY2hvbGxzMTk5OSIsImEiOiJjazg5NXEyc2UwMzRxM25wa3A0cWJpc3llIn0.Xjr0Tkt6MXcyqIwGUdsDIw";
-
-class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      markers: [[35.6892, 51.3890]],
-    };
-  }
-
-  // state = {
-  //   center: [50.908492, -1.401176],
-  //   zoom: 17
-  // };
-
-  addMarker = (e) => {
-    const {markers} = this.state;
-    markers.pop();
-    markers.push(e.latlng);
-    this.setState({markers});
-  }
 
 
-  render(){
-  let DefaultIcon = L.icon({
-    iconUrl: icon,
+function App(){
+
+  const [markerPosition, setMarkerPosition] = useState({
+    lat: null,
+    lng: null
   });
 
-  L.Marker.prototype.options.icon = DefaultIcon;
+  const { lat, lng } = markerPosition;
 
-    return (
-      <div>
-        <Map 
-            center={[50.908492, -1.401176]} 
-            onClick={this.addMarker} 
-            zoom={17}
-            maxZoom={18}
-            // minZoom={1}
-        >
-          <MapboxLayer
-            accessToken={MAPBOX_ACCESS_TOKEN}
-            style="mapbox://styles/alexnicholls1999/ck895rdr72dpf1ikbx7hgpk1z"
-          />
-          {this.state.markers.map((position, idx) =>
-            <Marker key={`marker-${idx}`} position={position}>
-            </Marker>
-            )}
-        </Map>
-         
-      </div>
-    );
+  function moveMarker() {
+    setMarkerPosition({
+      lat: lat + 0.0001,
+      lng: lng + 0.0001
+    });
   }
+
+  window.onload = function () {
+    console.log(markerPosition);
+    navigator.geolocation.getCurrentPosition((position) => {
+      setMarkerPosition({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      });
+    });
+  }
+
+  return (
+    <div>
+      <Map markerPosition={markerPosition}/>
+      <button onClick={moveMarker}> Move Marker </button>
+    </div>
+  );
 }
-
-
 
 export default App;
