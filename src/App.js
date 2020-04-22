@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Map from "./Components/Map";
-import L from "leaflet";
+import Button from "./Components/Button";
 import './App.css';
-
 
 
 function App(){
@@ -12,29 +11,48 @@ function App(){
     lng: null
   });
 
+
   const { lat, lng } = markerPosition;
 
-  function moveMarker() {
-    setMarkerPosition({
-      lat: lat + 0.0001,
-      lng: lng + 0.0001
-    });
+  window.onload = function() {
+    if (navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(
+        gpspos => {
+          setMarkerPosition({
+            lat: `${gpspos.coords.latitude}`,
+            lng: `${gpspos.coords.longitude}`
+          });
+        },
+        err => {
+          alert(`An error occurred: ${err.code}`);
+        }
+      );
+    } else {
+      alert("Sorry, geolocation not supported in this browser");
+        setMarkerPosition({
+          lat: 50.908492, 
+          lng: -1.401176    
+        });
+    } 
   }
 
-  window.onload = function () {
-    console.log(markerPosition);
-    navigator.geolocation.getCurrentPosition((position) => {
-      setMarkerPosition({
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      });
-    });
+  function moveMarker() {
+    navigator.geolocation.getCurrentPosition(
+      gpspos => {
+        setMarkerPosition({
+          lat: `${gpspos.coords.latitude}`,
+          lng: `${gpspos.coords.longitude}`
+        });
+      },
+    );
   }
 
   return (
     <div>
       <Map markerPosition={markerPosition}/>
-      <button onClick={moveMarker}> Move Marker </button>
+
+      <Button onClick={moveMarker}></Button>
+
     </div>
   );
 }
