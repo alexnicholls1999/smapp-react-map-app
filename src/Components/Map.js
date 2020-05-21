@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import L from "leaflet";
-
 import icon from '../Assets/Location_Icon.png';
-import gps from '../Assets/gps.png';
+import gps from '../Assets/gps.png'; 
+import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
+
 
 const style = {
     height: "100vh",
@@ -11,6 +12,21 @@ const style = {
 
 function Map({ markerPosition }) {
     const mapRef = useRef(null);
+  
+    const provider = new OpenStreetMapProvider();
+
+    const searchControl = new GeoSearchControl({
+        provider: provider,
+        style: 'bar',
+        marker: {
+            iconUrl: icon,
+            draggable: false,
+        },
+        autoClose: true,
+        keepResult: true,
+        retainZoomLevel: true,
+        searchLabel: 'Search for location',
+    });
 
     const panTo = () => {
         mapRef.current.flyTo(markerPosition, mapRef.current.getZoom(), {
@@ -34,16 +50,27 @@ function Map({ markerPosition }) {
 
         var marker;
 
-        mapRef.current.on('click', function(e) {
-            if (marker) {
-                mapRef.current.removeLayer(marker);
-            }
+        mapRef.current.addControl(searchControl);
 
-            marker = L.marker(e.latlng).addTo(mapRef.current);
-        });
-    }, []);
+        // mapRef.current.on('click', function(e) {
+        //     if (marker) {
+        //         mapRef.current.removeLayer(marker);
+        //     }
 
-    
+        //     marker = L.marker(e.latlng).addTo(mapRef.current);
+        // });
+
+        // form.addEventListener('submit', async (event) => {
+        //     event.preventDefault();
+
+        //     const results = await provider.search({ query: input.value });
+        //     console.log(results);
+        // })
+
+    }, []); 
+
+
+
     const markerRef = useRef(null);
 
     const DefaultIcon = L.icon({

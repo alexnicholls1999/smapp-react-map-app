@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Map from "./Components/Map";
 import Button from "./Components/Button";
+import SearchIcon from '@material-ui/icons/Search';
+
 import './App.css';
 
+const search = {
+  position: "absolute",
+  color: "#5EFBCC",
+  zIndex: "2000",
+  right: "5%",
+  top: "35px",
+  fontWeight: "200", 
+  padding: "6px",
+  height: "22px",
+}
 
 function App(){
 
@@ -52,6 +64,8 @@ function App(){
       <Map markerPosition={markerPosition}/>
 
       <Button onClick={moveMarker}></Button>
+
+      <SearchIcon style={search}/>
 
     </div>
   );
