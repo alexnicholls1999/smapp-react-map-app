@@ -7,8 +7,21 @@ import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
 
 const style = {
     height: "100vh",
-    width: "100vw" 
+    width: "100vw",
 };
+
+const DefaultIcon = L.icon({
+    iconUrl: icon,
+    iconSize: [22, 31],
+    iconAnchor: [11, 30],
+    popupAnchor: [0, -31],
+});
+
+const gpsicon = L.icon({
+    iconUrl: gps,
+    iconSize: [22, 22],
+});
+
 
 function Map({ markerPosition }) {
     const mapRef = useRef(null);
@@ -19,7 +32,7 @@ function Map({ markerPosition }) {
         provider: provider,
         style: 'bar',
         marker: {
-            iconUrl: icon,
+            iconUrl: DefaultIcon,
             draggable: false,
         },
         autoClose: true,
@@ -52,37 +65,26 @@ function Map({ markerPosition }) {
 
         mapRef.current.addControl(searchControl);
 
-        // mapRef.current.on('click', function(e) {
-        //     if (marker) {
-        //         mapRef.current.removeLayer(marker);
-        //     }
+        mapRef.current.on('click', function(e) {
+            if (marker) {
+                mapRef.current.removeLayer(marker);
+            }
 
-        //     marker = L.marker(e.latlng).addTo(mapRef.current);
-        // });
+            marker = L.marker(e.latlng).addTo(mapRef.current);
+            marker.bindPopup(btn);
+        });
 
-        // form.addEventListener('submit', async (event) => {
-        //     event.preventDefault();
-
-        //     const results = await provider.search({ query: input.value });
-        //     console.log(results);
-        // })
+        let btn = document.createElement('a');
+        btn.innerText = 'Remove Marker';
+        btn.onclick = function() {
+            mapRef.current.removeLayer(marker);
+        }
 
     }, []); 
 
 
 
     const markerRef = useRef(null);
-
-    const DefaultIcon = L.icon({
-        iconUrl: icon,
-        iconSize: [22, 31],
-        iconAnchor: [11, 30]
-    });
-
-    const gpsicon = L.icon({
-        iconUrl: gps,
-        iconSize: [22, 22],
-    });
 
     L.Marker.prototype.options.icon = DefaultIcon;
 
