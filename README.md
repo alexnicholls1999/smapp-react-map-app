@@ -62,8 +62,8 @@ First make sure you have cloned and installed locally correctly.
 
 ### Mark 2 
 
+![mk2](https://user-images.githubusercontent.com/33902638/83204238-3c040a80-a143-11ea-8e26-bd7cf4ee9f08.gif)
 
-<GIF>
 
 Mark 2 was designed to be tested by users to consider ease of use of the basic design components and controls such as adding markers, geolocation and ability to maneuver through the map with zoom controls using React Functional Components, LeafletJS and Mapbox. 
 
@@ -80,7 +80,7 @@ First make sure you have cloned and installed locally correctly.
 ### Mark 3 
 
 
-<a href="https://gyazo.com/72e900d1543e3bd5e2cc2d84e0e8d2f7"><img src="https://i.gyazo.com/72e900d1543e3bd5e2cc2d84e0e8d2f7.gif" alt="Image from Gyazo" width="2880"/></a>
+![mk3](https://user-images.githubusercontent.com/33902638/83204234-3a3a4700-a143-11ea-9682-f144280fe15a.gif)
 
 Mark 3 was designed to be tested by users to consider ease of use of searching for locations through the use of a search bar. 
 
@@ -97,7 +97,7 @@ First make sure you have cloned and installed locally correctly.
 ### Mark 4 
 
 
-<GIF>
+![mk4](https://user-images.githubusercontent.com/33902638/83204247-3efefb00-a143-11ea-9ed6-098421cee5a7.gif)
 
 
 
