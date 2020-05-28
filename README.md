@@ -46,7 +46,7 @@ Four agile sprints were implemented to design, build, test and review the protot
 
 ### Mark 1 
 
-<GIF>
+![mk1](https://user-images.githubusercontent.com/33902638/83202750-335e0500-a140-11ea-9f56-51fa7bdfcda2.gif)
 
 Mark 1 was designed to be tested by users to consider ease of use of the basic design components and controls such as adding markers, and ability to maneuver through the map with zoom controls using React Class Components, React-Leaflet and Mapbox. 
 
