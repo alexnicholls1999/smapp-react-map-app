@@ -80,7 +80,7 @@ First make sure you have cloned and installed locally correctly.
 ### Mark 3 
 
 
-<GIF>
+<a href="https://gyazo.com/72e900d1543e3bd5e2cc2d84e0e8d2f7"><img src="https://i.gyazo.com/72e900d1543e3bd5e2cc2d84e0e8d2f7.gif" alt="Image from Gyazo" width="2880"/></a>
 
 Mark 3 was designed to be tested by users to consider ease of use of searching for locations through the use of a search bar. 
 
