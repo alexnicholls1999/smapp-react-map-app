@@ -109,7 +109,7 @@ As a user I want to be able to be provided with a route and directions from one 
 
 #### View Mark-4
 First make sure you have cloned and installed locally correctly.  
-1. Use `git branch checkout smapp-app-mk4` within the terminal to move to Mark 3 prototype. 
+1. Use `git branch checkout smapp-app-mk4` within the terminal to move to Mark 4 prototype. 
 2. Run in terminal `npm start` 
 
 
