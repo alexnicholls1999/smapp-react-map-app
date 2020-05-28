@@ -12,7 +12,7 @@ Clone the repository to terminal or download as a zip file
 #### 1. Click clone or download button
 Click clone button and copy & paste the HTTPS link
 
-#### 2. Git clone `git clone https://github.com/alexnicholls1999/smapp-react-map-app.git`
+#### 2. Git clone `git clone https://github.com/alexnicholls1999/smapp-react-map-app.git`
 Open terminal and use the git clone command with the HTTPS link 
 
 ### Download as ZIP File 
@@ -25,7 +25,7 @@ Click clone button and select download as zip
 ### Install this application through the terminal with NPM
 
 #### 1. Npm install `npm install`
-Installs all fills built within this application
+Installs all files built within this application
 
 #### 2. Npm Start `npm start`
 
