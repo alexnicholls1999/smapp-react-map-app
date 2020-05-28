@@ -36,8 +36,13 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ## Wireframe 
+![Desktop-Smapp](https://user-images.githubusercontent.com/33902638/83204725-702bfb00-a144-11ea-9665-dac592b9e3a3.png)
+![iPhone-Smapp](https://user-images.githubusercontent.com/33902638/83204732-73bf8200-a144-11ea-84a9-0a6a6e78a368.png)
+![iPhone-Smapp2](https://user-images.githubusercontent.com/33902638/83204735-76ba7280-a144-11ea-855c-2f3842d5db2f.png)
 
-Here is an image of the main wireframe for desktop and mobile. More on this checkout out:
+
+Above is images of the main wireframe for desktop and mobile. More on this checkout out: 
+[Wireframes and StyleGuide](https://github.com/alexnicholls1999/smapp-react-map-app/tree/master/Wireframes%20and%20StyleGuide)
 
 
 ## Methodology
