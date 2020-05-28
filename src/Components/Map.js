@@ -3,7 +3,12 @@ import L from "leaflet";
 import icon from '../Assets/Location_Icon.png';
 import gps from '../Assets/gps.png'; 
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
-
+import "leaflet-routing-machine";
+import "leaflet-control-geocoder";
+import { placeholder } from '@babel/types';
+import { number } from 'prop-types';
+import { plugins } from 'pretty-format';
+// import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
 const style = {
     height: "100vh",
@@ -25,7 +30,7 @@ const gpsicon = L.icon({
 
 function Map({ markerPosition }) {
     const mapRef = useRef(null);
-  
+    
     const provider = new OpenStreetMapProvider();
 
     const searchControl = new GeoSearchControl({
@@ -39,6 +44,16 @@ function Map({ markerPosition }) {
         keepResult: true,
         retainZoomLevel: true,
         searchLabel: 'Search for location',
+    });
+
+    const control = L.Routing.control({
+        router: L.Routing.mapbox('pk.eyJ1IjoiYWxleG5pY2hvbGxzMTk5OSIsImEiOiJjazg5NXEyc2UwMzRxM25wa3A0cWJpc3llIn0.Xjr0Tkt6MXcyqIwGUdsDIw'),
+        waypoints: [null],
+        lineOptions: {
+            styles: [{color: "#1EE5AB"}] 
+        },
+        routeWhileDragging: true,
+        geocoder: L.Control.Geocoder.nominatim(),
     });
 
     const panTo = () => {
@@ -63,7 +78,21 @@ function Map({ markerPosition }) {
 
         var marker;
 
+        const routeBlock = control.onAdd(mapRef.current);
+        document.getElementById("menu").appendChild(routeBlock);
+
         mapRef.current.addControl(searchControl);
+
+        // L.Routing.control({
+        //     router: L.Routing.mapbox('pk.eyJ1IjoiYWxleG5pY2hvbGxzMTk5OSIsImEiOiJjazg5NXEyc2UwMzRxM25wa3A0cWJpc3llIn0.Xjr0Tkt6MXcyqIwGUdsDIw'),
+        //     waypoints: [
+        //       L.latLng(57.74, 11.94),
+        //       L.latLng(57.6792, 11.949)
+        //     ],
+        //     routeWhileDragging: true,
+        //     geocoder: L.Control.Geocoder.nominatim(),
+        // }).addTo(mapRef.current);
+
 
         mapRef.current.on('click', function(e) {
             if (marker) {
@@ -81,6 +110,8 @@ function Map({ markerPosition }) {
         }
 
     }, []); 
+
+ 
 
 
 

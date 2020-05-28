@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Map from "./Components/Map";
 import Button from "./Components/Button";
 import SearchIcon from '@material-ui/icons/Search';
+import SideBar from './Components/Menu';
+import { useLocation } from "react-router-dom";
 
 import './App.css';
+
 
 const search = {
   position: "absolute",
@@ -18,11 +21,26 @@ const search = {
 
 function App(){
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+
+  const handleClick = e => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleOuterWrapperClick = e => {
+    setMenuOpen(false);
+  };
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
+
   const [markerPosition, setMarkerPosition] = useState({
     lat: null,
     lng: null
   });
-
 
   const { lat, lng } = markerPosition;
 
@@ -60,14 +78,24 @@ function App(){
   }
 
   return (
-    <div>
-      <Map markerPosition={markerPosition}/>
+    <div id="App">
+        <SideBar pageWrapId={"page-wrap"} outerContainerId="App"/>
 
-      <Button onClick={moveMarker}></Button>
+        <div>
+          <Map markerPosition={markerPosition}/>
 
-      <SearchIcon style={search}/>
+          <Button onClick={moveMarker}></Button>
+
+          <SearchIcon style={search}/>
+        </div>
+
+        {/* <Menu onClick={handleClick} open={menuOpen}/>
+        {/* <div 
+          onClick={handleOuterWrapperClick}
+        ></div> */}
 
     </div>
+
   );
 }
 
