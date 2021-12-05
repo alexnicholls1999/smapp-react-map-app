@@ -1,125 +1,70 @@
-# Smapp: A single page web application 
+# Getting Started with Create React App
 
-## Introduction
-The single web page application known as Student Mapp or (Smapp), is a navigation application designed to help students navigate throughout Solent University.  The search system will allow students and other users to locate all the university sites, buildings and rooms. The routing system will allow users to select two locations and be provided with all possible routes and information on how to get there. 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Installation
+## Available Scripts
 
-Clone the repository to terminal or download as a zip file
+In the project directory, you can run:
 
-### Git Clone Repository to terminal 
+### `yarn start`
 
-#### 1. Click clone or download button
-Click clone button and copy & paste the HTTPS link
-
-#### 2. Git clone `git clone https://github.com/alexnicholls1999/smapp-react-map-app.git`
-Open terminal and use the git clone command with the HTTPS link 
-
-### Download as ZIP File 
-
-#### 1. Click clone or download button
-Click clone button and select download as zip 
-
-#### 2. Extract zip and open with a text editor
-
-### Install this application through the terminal with NPM
-
-#### 1. Npm install `npm install`
-Installs all files built within this application
-
-#### 2. Npm Start `npm start`
-
-Runs the app in the development mode.<br />
+Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
+The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-## Wireframe 
-![Desktop-Smapp](https://user-images.githubusercontent.com/33902638/83204725-702bfb00-a144-11ea-9665-dac592b9e3a3.png)
-![iPhone-Smapp](https://user-images.githubusercontent.com/33902638/83204732-73bf8200-a144-11ea-84a9-0a6a6e78a368.png)
-![iPhone-Smapp2](https://user-images.githubusercontent.com/33902638/83204735-76ba7280-a144-11ea-855c-2f3842d5db2f.png)
+### `yarn test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Above is images of the main wireframe for desktop and mobile. More on this checkout out: 
-[Wireframes and StyleGuide](https://github.com/alexnicholls1999/smapp-react-map-app/tree/master/Wireframes%20and%20StyleGuide)
+### `yarn build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Methodology
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Four agile sprints were implemented to design, build, test and review the prototype. Each prototype was referenced Markup or ‘Mark’ with the number of each prototype (e.g. Mark-1).  User stories were created based on previous user research. Each prototype was designed using Sketch and modified from the previous prototypes, using different design components from a design library. Each prototype was built through React functional components (React Components, 2020).  MapBox (MapBox, 2020) was then used to create the 2D world map and Leaflet (Leaflet, 2020) was used to simulate UI elements.  Usability testing was then integrated for each prototype to test usability and user perception.  After testing, each prototype was reviewed to identify any early design issues that need to be addressed within the next sprint.  
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Mark 1 
+### `yarn eject`
 
-![mk1](https://user-images.githubusercontent.com/33902638/83202750-335e0500-a140-11ea-9f56-51fa7bdfcda2.gif)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Mark 1 was designed to be tested by users to consider ease of use of the basic design components and controls such as adding markers, and ability to maneuver through the map with zoom controls using React Class Components, React-Leaflet and Mapbox. 
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-#### Mark 1 User Story 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-As a user I want to be able to add a marker to the map so that I can easily search for my desired location
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Learn More
 
-#### View Mark-1
-First make sure you have cloned and installed locally correctly.  
-1. Use `git branch checkout smapp-app-mk1` within the terminal to move to Mark 1 prototype. 
-2. Run in terminal `npm start` 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Mark 2 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-![mk2](https://user-images.githubusercontent.com/33902638/83204238-3c040a80-a143-11ea-8e26-bd7cf4ee9f08.gif)
+### Code Splitting
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Mark 2 was designed to be tested by users to consider ease of use of the basic design components and controls such as adding markers, geolocation and ability to maneuver through the map with zoom controls using React Functional Components, LeafletJS and Mapbox. 
+### Analyzing the Bundle Size
 
-#### Mark 2 User Story 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-As a user I want to be able to retrieve my current location on the map
+### Making a Progressive Web App
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-#### View Mark-2
-First make sure you have cloned and installed locally correctly.  
-1. Use `git branch checkout smapp-app-mk2` within the terminal to move to Mark 2 prototype. 
-2. Run in terminal `npm start` 
+### Advanced Configuration
 
-### Mark 3 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
+### Deployment
 
-![mk3](https://user-images.githubusercontent.com/33902638/83204234-3a3a4700-a143-11ea-9682-f144280fe15a.gif)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Mark 3 was designed to be tested by users to consider ease of use of searching for locations through the use of a search bar. 
+### `yarn build` fails to minify
 
-#### Mark 3 User Story 
-
-As a user I want to be able to find for a location via a keyword search
-
-
-#### View Mark-3
-First make sure you have cloned and installed locally correctly.  
-1. Use `git branch checkout smapp-app-mk3` within the terminal to move to Mark 3 prototype. 
-2. Run in terminal `npm start` 
-
-### Mark 4 
-
-
-![mk4](https://user-images.githubusercontent.com/33902638/83204247-3efefb00-a143-11ea-9ed6-098421cee5a7.gif)
-
-
-
-Mark 4 was designed to be tested by users to consider ease of use of searching for locations and provide the correct route to get from one destination to another. 
-
-#### Mark 4 User Story 
-
-As a user I want to be able to be provided with a route and directions from one marker to another.
-
-#### View Mark-4
-First make sure you have cloned and installed locally correctly.  
-1. Use `git branch checkout smapp-app-mk4` within the terminal to move to Mark 4 prototype. 
-2. Run in terminal `npm start` 
-
-
-
-    
-
-
-
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
