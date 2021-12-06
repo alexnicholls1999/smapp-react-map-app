@@ -1,8 +1,11 @@
+import { Route, Routes } from "react-router";
+import Navigation from "./Pages/Navigation";
+
 function App() {
   return (
-    <div>
-        <h1>Test</h1>
-    </div>
+    <Routes>
+        <Route exact path="/" element={<Navigation />} />
+    </Routes>
   );
 }
 
