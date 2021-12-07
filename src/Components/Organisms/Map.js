@@ -1,15 +1,21 @@
 import PropTypes from "prop-types"
-import { MapContainer, Popup, TileLayer, Marker} from 'react-leaflet'
+import { MapContainer, Popup, TileLayer, Marker, useMap} from 'react-leaflet'
+import useGeoloation from "../../react-hooks/useGeolocation";
+import GPS from "../Atoms/GPS"
 
 function Map({map}) {
+    const mapRef = useMap();
+    const { position } = useGeoloation(mapRef)
+
     return (
-        <MapContainer center={map.position} zoom={map.zoom} scrollWheelZoom={true}>
+        <MapContainer center={[11, -0.121212]} zoom={map.zoom} scrollWheelZoom={true}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" /> 
             <Marker position={[11, -0.121212]}>
                 <Popup>
                     Hello there! <br /> General Kenobi
                 </Popup>
             </Marker>
+            <GPS position={position}/>
         </MapContainer>
     )
 }

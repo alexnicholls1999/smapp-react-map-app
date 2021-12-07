@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { useMap } from "react-leaflet";
 
-export default function useGeoloation(){
+export default function useGeoloation(map){
 
     const [position, setPosition] = useState({
         lat: 0,
@@ -30,8 +31,8 @@ export default function useGeoloation(){
     })
 
     useEffect(() => {
-        
-    })
+        map.flyTo(position, map.getZoom());
+    }, [map])
     
     return { 
         position
