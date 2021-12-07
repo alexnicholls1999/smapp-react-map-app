@@ -5,7 +5,7 @@ function Map({map}) {
     return (
         <MapContainer center={map.position} zoom={map.zoom} scrollWheelZoom={true}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" /> 
-            <Marker position={map.position}>
+            <Marker position={[11, -0.121212]}>
                 <Popup>
                     Hello there! <br /> General Kenobi
                 </Popup>

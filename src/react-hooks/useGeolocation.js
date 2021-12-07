@@ -1,16 +1,40 @@
 import { useEffect, useState } from "react";
 
-export default function useGeoloation(map){
-    const [position, setPosition] = useState(null);
+export default function useGeoloation(){
+
+    const [position, setPosition] = useState({
+        lat: 0,
+        lng: 0
+    });
 
     useEffect(() => {
-        map.locate().on("locationfound", function (e) {
-            setPosition(e.latlng);
-            map.flyTo(e.latlng, map.getZoom());
-        })
-    }, [map])
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(
+                gpspos => {
+                    setPosition({
+                        lat: `${gpspos.coords.latitude}`,
+                        lng: `${gpspos.coords.longitude}`
+                    });
+                },
+                err => {
+                    alert(`An error occured: ${err.code}`)
+                }
+            );
+        } else {
+            alert("Sorry, geolocation is not supported in this browser");
+            setPosition({
+                lat: 0,
+                lng: 0
+            })
+        }
+    })
 
-    return {
+    useEffect(() => {
+        
+    })
+    
+    return { 
         position
     }
+
 }
