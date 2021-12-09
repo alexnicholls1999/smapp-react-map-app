@@ -1,22 +1,34 @@
 import { useEffect, useState } from "react";
 
-function findCurrentLocation(){
-    
-}
-
 export default function useGeolocation(map) {
-    const [position, setPosition] = useState(null);
+    const [position, setPosition] = useState({lat: 50.908492, lng: -1.401176});
 
     useEffect(() => {
-        // map.locate().on("locationfound", handleOnLocationFound);
-        // map.on("locationerror", handleOnLocationErr)
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                gpspos => {
+                    setPosition({
+                        lat: `${gpspos.coords.latitude}`,
+                        lng: `${gpspos.coords.longitude}`
+                    });
+                },
+                err => {
+                    alert(`An error occurred: ${err.code}`);
+                }
+            )
+        } else {
+            alert("Sorry, geolocation not supported in this browser");
+            setPosition({
+                lat: 50.908492,
+                lng: -1.401176
+            })
+        }
         
-        // return () => {
-        //     map.off("locationfound", handleOnLocationFound);
-        //     map.off("locationerror", handleOnLocationErr)
-        // }
-    
+        map.flyTo(position, map.getZoom());
+
     }, []);
+    
+    console.log(position)
 
     function handleOnLocationFound(e) {
         setPosition(e.latlng);
