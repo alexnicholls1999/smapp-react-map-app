@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import { MapContainer, Popup, TileLayer, Marker, useMap} from 'react-leaflet'
 import Geolocation from "../Atoms/Geolocation"
+import ZoomControl from "../Molecules/ZoomControl"
 
 function Map({map}) {
 
@@ -14,6 +15,7 @@ function Map({map}) {
                 </Popup>
             </Marker>
             <Geolocation />
+            <ZoomControl />
         </MapContainer>
     )
 }
