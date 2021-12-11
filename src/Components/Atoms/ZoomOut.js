@@ -3,7 +3,7 @@ import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './atoms.sass'
 
-function ZoomOut(handleZoomOutClick) {
+function ZoomOut({handleZoomOutClick}) {
     return (
         <button className="zoom-btn" id="zoom-out" onClick={handleZoomOutClick}>
             <FontAwesomeIcon icon={faMinus} />
@@ -12,7 +12,7 @@ function ZoomOut(handleZoomOutClick) {
 }
 
 ZoomOut.propTypes = {
-    handleZoomOutClick: PropTypes.func.isRequired
+    handleZoomOutClick: PropTypes.func
 }
 
 
