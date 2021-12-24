@@ -4,40 +4,25 @@ import { MapContainer, Popup, TileLayer, Marker, useMap} from 'react-leaflet'
 import Geolocation from "../Atoms/Geolocation"
 import ZoomControl from "../Molecules/ZoomControl"
 
-function Map({map}) {
-
-    const [zoom, setZoom] = useState(13)
-    const [disabledZoom, setDisabledZoom] = useState({
-        minZoom: false,
-        maxZoom: false
-    })
-
-    console.log(zoom)
-
-    useEffect(() => {
-        if (zoom === 19) return setDisabledZoom({zoomIn: !disabledZoom.maxZoom})
-        if (zoom < 4) return setDisabledZoom({zoomIn: !disabledZoom.minZoom})
-    }, [])
+function Map({children}) {
 
     return (
-        <MapContainer center={map.position} zoom={zoom} scrollWheelZoom={true}>
+        <MapContainer center={[50.908942, -1.401176]} zoom={16} scrollWheelZoom={true} zoomControl={false}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" /> 
             <Marker position={[11, -0.121212]}>
                 <Popup>
                     Hello there! <br /> General Kenobi
                 </Popup>
             </Marker>
-            <ZoomControl handleZoomInClick={() => setZoom(zoom + 1)} handleZoomOutClick={() => setZoom(zoom - 1)} minZoom={disabledZoom.minZoom} maxZoom={disabledZoom.maxZoom}/>
+            <ZoomControl />
             <Geolocation />
+            {children}
         </MapContainer>
     )
 }
 
 Map.propTypes = {
-    map: PropTypes.shape({
-        position: PropTypes.arrayOf(PropTypes.number.isRequired),
-        zoom: PropTypes.number.isRequired
-    })
+    children: PropTypes.node.isRequired
 }
 
 export default Map

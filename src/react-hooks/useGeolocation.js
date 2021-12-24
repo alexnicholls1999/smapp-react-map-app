@@ -28,7 +28,12 @@ export default function useGeolocation(map) {
 
     }, [position.lat, position.lng]);
 
+    const handleFindMyLocation = () => {
+        map.flyTo(position, map.getMaxZoom());
+    }
+
     return {
-        position
+        position,
+        handleFindMyLocation
     }
 }

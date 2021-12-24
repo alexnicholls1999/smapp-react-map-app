@@ -4,12 +4,14 @@ import ZoomIn from '../Atoms/ZoomIn'
 import ZoomOut from '../Atoms/ZoomOut'
 import './molecules.sass';
 
-function ZoomControl({...props}) {
+function ZoomControl() {
+
+    const map = useMap()
 
     return (
         <div className="zoom-control">
-            <ZoomIn {...props} />
-            <ZoomOut {...props} />   
+            <ZoomIn handleZoomInClick={() => map.setZoom(map.getZoom() + 1)} />
+            <ZoomOut handleZoomOutClick={() => map.setZoom(map.getZoom() - 1)}/>   
         </div>
     )
 }

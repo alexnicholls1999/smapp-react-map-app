@@ -1,0 +1,50 @@
+[
+    {
+        "id": "01",
+        "locationName": "Micheal Andrew Building",
+        "lat": 50.90757,
+        "lng": -1.40119
+    },
+    {
+        "id": "02",
+        "locationName": "Regionald M Building",
+        "lat": 50.90755,
+        "lng": -1.40060
+    },
+    {
+        "id": "03",
+        "locationName": "Sir Christopher Cockerell Building",
+        "lat": 50.90773,
+        "lng": -1.3991
+    },
+    {
+        "id": "04",
+        "locationName": "Herbert Collins Building",
+        "lat": 50.90785,
+        "lng": -1.39935
+    },
+    {
+        "id": "05",
+        "locationName": "Students Union Building",
+        "lat": 50.90842,
+        "lng": -1.39966
+    },
+    {
+        "id": "06",
+        "locationName": "Sir John Everett Milias Building",
+        "lat": 50.90858,
+        "lng": -1.40019
+    },
+    {
+        "id": "07",
+        "locationName": "The Spark",
+        "lat": 50.90878,
+        "lng": -1.40051
+    },
+    {
+        "id": "08",
+        "locationName": "Southampton Solent University",
+        "lat": 50.90878,
+        "lng": -1.40051
+    }
+]

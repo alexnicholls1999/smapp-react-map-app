@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 // import './atoms.sass'
 
-function ZoomIn({handleZoomInClick, minZoom}) {
+function ZoomIn({handleZoomInClick}) {
     return (
-        <button className="zoom-btn" id="zoom-in" disabled={minZoom} onClick={handleZoomInClick}>
+        <button className="zoom-btn" id="zoom-in" onClick={handleZoomInClick}>
             <FontAwesomeIcon icon={faPlus} />
         </button>
     )

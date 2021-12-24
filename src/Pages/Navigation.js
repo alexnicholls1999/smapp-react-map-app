@@ -1,10 +1,16 @@
+import Searchbar from "../Components/Molecules/Searchbar";
 import Map from "../Components/Organisms/Map"
+import Places from "../Components/Organisms/Places"
+import places from "./../places.json";
 
 function Navigation() {
 
-    const position = [50.908942, -1.401176]
-
-    return <Map map={{position: position}}/>
+    return (
+        <Map>
+            <Places places={places} />
+            <Searchbar />
+        </Map>
+    )
 }
 
 export default Navigation
