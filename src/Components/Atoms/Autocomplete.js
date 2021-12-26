@@ -58,7 +58,7 @@ export default class Autocomplete extends Component {
 
     render() {
         return (
-            <div>
+            <div className="autocomplete">
                 <input type="text" value={this.state.text} onChange={this.autoCompleteText}/>
                 {this.renderSuggestions()}
             </div>
