@@ -42,11 +42,7 @@ export default function Suggestions({places}) {
         if (upKey) return console.log('up');
 
         if (downKey) {
-            if (inputIsFocused) {
-                suggestionsItems[0].querySelector('a').focus();
-            } else {
-                suggestionsItems[activeResultIndex + 1].querySelector('a').focus();
-            }
+            suggestionsItems[0].querySelector('div').focus()
         }
     }
 
@@ -64,17 +60,17 @@ export default function Suggestions({places}) {
         setText(value)
     }
 
-    function suggestionSelected(value){
+    const suggestionSelected = (value) => {
         setText(value);
         setSuggestions([]);
     }
 
-    function renderSuggestions() {
-        if (suggestions.length === 0) return null;
+    const renderSuggestions = () => {
+        if (!results) return null;
 
         return (
             <ul ref={suggestionsRef}>
-                {suggestions.map((place) => <li key={place} onClick={() => suggestionSelected(place)}><a>{place}</a></li>)}
+                {suggestions.map((place, index) => <li key={index}><div onClick={() => suggestionSelected(place)}>{place}</div></li>)}
             </ul>
         )
     }

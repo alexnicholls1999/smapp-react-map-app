@@ -15,16 +15,17 @@ const locationNames = [
     'The Spark', 
     'Southampton Solent University'
 ]
-
+ 
 function Navigation() {
 
     return (
-        // <Map>
-        //     <Places places={places} />
-        //     <Searchbar />
-        // </Map>
-        // <Autocomplete />
-        <Suggestions places={locationNames}/>
+        <>
+            <Map>
+                <Places places={places} />
+                <Searchbar />
+            </Map>
+            <Suggestions places={locationNames}/>
+        </>
     )
 }
 
