@@ -35,24 +35,46 @@
     
 
 .autocomplete
-    width: 15rem
-    border: 1px solid grey
-    box-shadow: 0 0 0 1px rgba(0, 0, 0,.1), 0 2px 4px 1px rgba(0, 0, 0,.18)
-    font-size: 14px
-    color: rgba(0, 0, 0, 0.73)
+    display: flex
+    flex-flow: column
 
-    input 
-        width: 100%
+.autocomplete-wrapper
+    display: flex
+    flex-flow: row
+    justify-content: space-between
+    padding: 0.8rem 0.7rem
+    margin: 1rem
+    border-radius: 0.5rem
+    box-shadow: 0 0 7rem 1rem rgba(black, 0.1)
+    grid-gap: 1rem
+    gap: 1rem
+    color: $colors-primary-600
+    float: right
+    width: 80%
+    max-width: 20em
+
+    input
+        flex-basis: 100%
+        outline: none
         border: none
-        font-size: 14px
-        color: rgba(0, 0, 0, 0.73)
-        box-sizing: border-box
+        color: $colors-neutral-700
 
-    ul
-        list-style-type: none
-        text-align: left
-        margin: 0
-        padding: 0
+.suggestions 
+    position: relative
+    display: flex
+    flex-flow: column
+    justify-content: center
+    align-content: flex-start
+    width: 100%
+    max-width: 20em
+    list-style: none
+    background: red
+    padding: 0
 
-        li
-            padding: 10px 5px
+.active 
+    background: lightgray
+
+
+@media (min-width: 48em) 
+    .autocomplete-wrapper
+        float: left

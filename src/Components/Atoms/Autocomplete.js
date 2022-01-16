@@ -1,67 +1,81 @@
-import { text } from '@fortawesome/fontawesome-svg-core';
-import React, { Component } from 'react'
-import { places } from "./../../places.json"
+import { useEffect, useState } from "react"
+import Input from "./Form/Input"
+import './atoms.sass'
+import SearchIcon from "./Iconography/SearchIcon";
 
-const locationNames = [
-    'Michael Andrew Building',
-    'Regionald M Building',
-    'Sir Christopher Cockerell Building',
-    'Herbert Collins Building',
-    'Students Union Building',
-    'Sir John Everett Milias Building',
-    'The Spark', 
-    'Southampton Solent University'
-]
+function AutoComplete({ data }) {
+  const [state, setState] = useState({
+      suggestions: [],
+      index: 0,
+      active: false,
+      value: ""
+  })
 
-export default class Autocomplete extends Component {
+  const { suggestions, index, active, value} = state;
 
-    constructor (props) {
-        super(props)
-        this.places = locationNames;
+  useEffect(() => {
+    document.body.addEventListener("keydown", handleKeyDown)
 
-        this.state = {
-            suggestions: [],
-            text: ''
-        }
+    return () => {
+        document.body.removeEventListener("keydown", handleKeyDown)
     }
+  })
 
-    autoCompleteText = (e) => {
-        const value = e.target.value;
-        let suggestions = [];
-        
-        if (value.length > 0) {
-            const regex = new RegExp(`^${value}`, 'i');
-            suggestions = this.places.sort().filter(v => regex.test(v))
-        }
+  const handleChange = (e) => {
+    const query = e.target.value.toLowerCase();
+    setState(currentstate => ({...currentstate, value: query }))
+    if (query.length > 1) {
+        const filterSuggestions = data.filter((suggestion) => suggestion.toLowerCase().indexOf(query) > -1);
+        setState(currentstate => ({...currentstate, suggestions: filterSuggestions, active: true}))
 
-        this.setState(() => ({suggestions, text: value}))
+    } else {
+        setState(currentstate => ({...currentstate, active: false}))
     }
+  };
 
-    suggestionSelected(value) {
-        this.setState(() => ({
-            text: value,
-            suggestions: []
-        }))
+  const handleClick = (e) => {
+    setState(currentstate => ({...currentstate, suggestions: [], active: true, value: e.target.innerText}))
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 38) {
+      if (index === 0) return;
+      setState(currentstate => ({...currentstate, index: index - 1}))
+    } else if (e.keyCode === 40) {
+      if (index - 1 === suggestions.length) return;
+      setState(currentstate => ({...currentstate, index: index + 1}))
+    } else if (e.keyCode === 13) {
+      setState(currentstate => ({...currentstate, index: 0, active: false, value: suggestions[index]}))
     }
+  };
 
-    renderSuggestions (){
-        const {suggestions} = this.state;
+  const Suggestions = () => {
+    // if (suggestions.length) {
+    //     return <ul className="suggestions"> {suggestions.map((suggestion, i) => <li key={i} onClick={handleClick} className={i === index ? "active" : ""}>{suggestion}</li>)}</ul>
+    // } else {
+    //     return <p>No results found. Please Try Again</p>
+    // }
+    return <ul className="suggestions"> {suggestions.map((suggestion, i) => <li key={i} onClick={handleClick} className={i === index ? "active" : ""}>{suggestion}</li>)}</ul>
+   };
 
-        if (suggestions.length === 0) return null;
+  return (
+    <>
+    <div className="autocomplete">
+        <div className="autocomplete-wrapper">
+            <Input
+                    input={{
+                        value: value,
+                        onChange: handleChange,
+                        placeholder: "Search for location"
+                    }}
+            />
+            <SearchIcon />
+        </div>
+        {active && <Suggestions />}
+    </div>
+    </>
+  );
+  
+};
 
-        return (
-            <ul>
-                {suggestions.map((place) => <li onClick={() => this.suggestionSelected(place)}>{place}</li>)}
-            </ul>
-        )
-    }
-
-    render() {
-        return (
-            <div className="autocomplete">
-                <input type="text" value={this.state.text} onChange={this.autoCompleteText}/>
-                {this.renderSuggestions()}
-            </div>
-        )
-    }
-}
+export default AutoComplete;
