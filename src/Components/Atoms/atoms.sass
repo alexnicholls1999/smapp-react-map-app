@@ -1,17 +1,16 @@
-@import './../../styles/variables';
+@use './../../styles/abstract/index' as theme
 
 // Form
 // Input
 .input
     font-size: .9rem
 
-
 // Zoom
 
 .zoom-btn 
     position: relative
-    background-color: $colors-neutral-100
-    color: $colors-neutral-700
+    background-color: var(--colors-neutral-100)
+    color: var(--colors-neutral-700)
     cursor: pointer
     padding: 0.3rem
     border: none
@@ -31,7 +30,7 @@
     font-size: 1rem
     z-index: 500
     background-color: none
-    color: $colors-primary-600
+    color: var(--colors-primary-600)
     
 
 .autocomplete
@@ -48,7 +47,7 @@
     box-shadow: 0 0 7rem 1rem rgba(black, 0.1)
     grid-gap: 1rem
     gap: 1rem
-    color: $colors-primary-600
+    color: var(--colors-primary-600)
     float: right
     width: 80%
     max-width: 20em
@@ -57,7 +56,7 @@
         flex-basis: 100%
         outline: none
         border: none
-        color: $colors-neutral-700
+        color: var(--colors-neutral-700)
 
 .suggestions 
     position: relative

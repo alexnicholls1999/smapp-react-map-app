@@ -1,0 +1,26 @@
+@use './_variables' as colors
+
+@function colorsPrimary($key) 
+    @if map-has-key(colors.$colors-primary, $key) 
+        @return map-get(colors.$colors-primary, $key)
+
+    @warn "Unknown `#{$key}` in $colors-primary!"
+    @return null
+
+
+@function colorsNeutral($key) 
+    @if map-has-key(colors.$colors-neutral, $key) 
+      @return map-get(colors.$colors-neutral, $key)
+    
+  
+    @warn "Unknown `#{$key}` in $colors-neutral!"
+    @return null
+
+// @function colorsSecondary($key) 
+//     @if map-has-key(colors.$colors-secondary, $key) 
+//       @return map-get(colors.$colors-secondary, $key)
+    
+  
+//     @warn "Unknown `#{$key}` in $colors-secondary!"
+//     @return null
+
