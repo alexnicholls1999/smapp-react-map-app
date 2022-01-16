@@ -1,5 +1,5 @@
-@mixin borders($b-width, $b-style, $color) { 
-    border: $b-width $b-style var($color)
+@mixin borders($b-width, $color) { 
+    border: $b-width solid var($color)
 }
 
 

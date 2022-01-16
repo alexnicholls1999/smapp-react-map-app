@@ -6,9 +6,16 @@
     @include fontVariables();
 }
 
+*, html {
+    box-sizing: border-box;
+}
+
 body {
     @include fontFamily();
     margin: 0;
     padding: 0;
 }
 
+input, select, textarea, button {
+    font-family: inherit;
+}

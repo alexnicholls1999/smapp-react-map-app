@@ -1,0 +1,7 @@
+@use './../../styles/abstract' as theme;
+
+.input {
+    @include theme.colors($color: var(--colors-neutral-900), $bg-color: var(--colors-neutral-100));
+    padding: 0.75rem;
+    width: 100%;
+}

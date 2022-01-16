@@ -14,11 +14,6 @@
     --colors-primary-900: #{func.colorPrimary(900)};
 }
 
-// @mixin colorSecondaryVariables {
-//     --colors-secondary-100: #{func.colorSecondary(100)};
-//     --colors-secondary-900: #{func.colorSecondary(900)};
-// }
-
 @mixin colorVariables {
     @include colorNeutralVariables();
     @include colorPrimaryVariables();  
