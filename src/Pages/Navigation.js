@@ -19,7 +19,8 @@ function Navigation() {
 
     return (
         <>
-            <Autocomplete data={locationNames}/>
+            {/* <Autocomplete data={locationNames}/> */}
+            <h1>Navigation</h1>
         </>
     )
 }

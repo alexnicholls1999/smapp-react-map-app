@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import './atoms.sass'
 
 function ZoomOut({handleZoomOutClick}) {
     return (

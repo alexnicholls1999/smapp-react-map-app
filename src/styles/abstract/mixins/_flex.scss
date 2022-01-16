@@ -1,0 +1,15 @@
+// Flex
+
+@mixin flex($flow, $justify-content, $align-items) {
+    display: flex;
+    flex-flow: $flow;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin flex-center($flow){
+    display: flex;
+    flex-flow: $flow;
+    justify-content: center;
+    align-items: center;
+}

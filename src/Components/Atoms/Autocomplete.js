@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import Input from "./Form/Input"
-import './atoms.sass'
 import SearchIcon from "./Iconography/SearchIcon";
 
 function AutoComplete({ data }) {

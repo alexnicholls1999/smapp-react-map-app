@@ -1,6 +1,5 @@
 import Input from '../Atoms/Form/Input'
 import SearchIcon from '../Atoms/Iconography/SearchIcon'
-import "./molecules.sass"
 
 function Searchbar() {
 

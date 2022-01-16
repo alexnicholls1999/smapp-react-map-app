@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useMap } from 'react-leaflet';
 import ZoomIn from '../Atoms/ZoomIn'
 import ZoomOut from '../Atoms/ZoomOut'
-import './molecules.sass';
 
 function ZoomControl() {
 

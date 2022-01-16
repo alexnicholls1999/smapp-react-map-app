@@ -1,0 +1,12 @@
+@use './../variables' as var;
+
+
+@mixin fontVariables() {
+    --font-family-Montserrat: #{map-get(var.$fonts, montserrat)};
+    --font-family-SegoePrint: #{map-get(var.$fonts, segoePrint)};
+    --font-family-Arial: #{map-get(var.$fonts, arial)};
+};
+
+@mixin fontFamily() {
+    font-family: var(--font-family-Montserrat), var(--font-family-Arial);
+}

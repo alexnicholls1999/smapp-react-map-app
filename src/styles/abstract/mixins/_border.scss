@@ -1,0 +1,7 @@
+@mixin borders($b-width, $b-style, $color) { 
+    border: $b-width $b-style var($color)
+}
+
+
+
+
