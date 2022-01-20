@@ -1,6 +1,6 @@
 import Input from '../Atoms/Form/Input'
 import SearchIcon from '../Atoms/Iconography/SearchIcon'
-import './molecules.scss'
+import molecules from './molecules.modules.scss'
 
 function Searchbar() {
 
@@ -9,7 +9,7 @@ function Searchbar() {
     }
 
     return (
-        <div className="search-bar">
+        <div className={molecules.searchbar}>
             <Input input={{ onChange: handleChange, value: "location", placeholder: "Search for location"}} />
             <SearchIcon />
         </div>

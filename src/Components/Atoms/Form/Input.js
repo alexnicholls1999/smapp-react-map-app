@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import atoms from './../atoms.scss';
+import atoms from './../atoms.module.scss';
+
 
 function Input({input}) {
     return (

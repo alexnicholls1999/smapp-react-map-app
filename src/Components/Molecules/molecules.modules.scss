@@ -1,0 +1,8 @@
+@use './../../styles/abstract' as theme;
+
+.searchbar {
+    display: flex;
+    flex-flow: row;
+    border-radius: 0.25rem;
+    border: 1px solid grey;
+}
