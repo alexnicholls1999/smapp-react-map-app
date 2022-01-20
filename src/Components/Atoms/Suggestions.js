@@ -5,7 +5,7 @@ function Suggestions({suggestions, index, handleClick}) {
         <>
             {suggestions.length !== 0 ? (
                 <ul className={atoms.suggestionsList}> 
-                    {suggestions.map((suggestion, i) => <li key={i} onClick={handleClick} className={i === index ? atoms.activeSuggestion : null}>{suggestion}</li>)}
+                    {suggestions.map((suggestion, i) => <li key={i} onClick={handleClick} className={i === index ? atoms.activeSuggestion : ''}>{suggestion}</li>)}
                 </ul>
             ) : null}
         </>

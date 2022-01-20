@@ -2,7 +2,7 @@
 
 .searchbar {
     display: block;
-    width: min(75%, 30em);
+    width: min(75%, 20em);
     background-color: white;
     float: right;
     padding: 0.75rem;
@@ -15,6 +15,10 @@
         display: grid;
         grid-template-columns: 92% 8%;
         align-items: center;
+
+        input:focus {
+            outline: none;
+        }
 
         svg {
             color: var(--colors-primary-800);
