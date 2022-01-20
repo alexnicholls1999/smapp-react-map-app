@@ -1,4 +1,3 @@
-import Autocomplete from "../Components/Atoms/Autocomplete";
 import Searchbar from "../Components/Molecules/Searchbar";
 import Map from "../Components/Organisms/Map"
 import Places from "../Components/Organisms/Places"
@@ -19,7 +18,7 @@ function Navigation() {
 
     return (
         <>
-            <Autocomplete data={locationNames}/>
+            <Searchbar data={locationNames} />
         </>
     )
 }
