@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import './../atoms.scss';
+import atoms from './../atoms.scss';
 
 function Input({input}) {
     return (
-        <input className="input" onChange={input.onChange} value={input.value} placeholder={input.placeholder} onKeyDown={input.onKeyDown}/>
+        <input className={atoms.input} onChange={input.onChange} value={input.value} placeholder={input.placeholder} onKeyDown={input.onKeyDown}/>
     )
 }
 

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
-import { useState, useEffect } from "react"
-import { MapContainer, Popup, TileLayer, Marker, useMap} from 'react-leaflet'
+import { MapContainer, Popup, TileLayer, Marker } from 'react-leaflet'
 import Geolocation from "../Atoms/Geolocation"
 import ZoomControl from "../Molecules/ZoomControl"
+import './organisms.scss';
 
 function Map({children}) {
 
