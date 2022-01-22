@@ -9,6 +9,7 @@
 
 @mixin colorPrimaryVariables {
     --colors-primary-100: #{func.colorPrimary(100)};
+    --colors-primary-500: #{func.colorPrimary(500)};
     --colors-primary-700: #{func.colorPrimary(700)};
     --colors-primary-800: #{func.colorPrimary(800)};
     --colors-primary-900: #{func.colorPrimary(900)};
