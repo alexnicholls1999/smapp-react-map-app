@@ -4,6 +4,7 @@
 
 @mixin colorNeutralVariables {
     --colors-neutral-100: #{func.colorNeutral(100)};
+    --colors-neutral-700: #{func.colorNeutral(700)};
     --colors-neutral-900: #{func.colorNeutral(900)};
 }
 

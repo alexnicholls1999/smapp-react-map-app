@@ -1,6 +1,5 @@
 import Searchbar from "../Components/Molecules/Searchbar";
 import Map from "../Components/Organisms/Map"
-import Places from "../Components/Organisms/Places"
 import places from "./../places.json";
 
 const locationNames = [
@@ -17,9 +16,9 @@ const locationNames = [
 function Navigation() {
 
     return (
-        <>
+        <Map>
             <Searchbar data={locationNames} />
-        </>
+        </Map>
     )
 }
 

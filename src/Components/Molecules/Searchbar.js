@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
+
 import Input from "../Atoms/Form/Input";
 import SearchIcon from "../Atoms/Iconography/SearchIcon";
 import Suggestions from "../Atoms/Suggestions";
 import molecules from "./molecules.module.scss";
 
 function Searchbar({data}) {
+
     const [state, setState] = useState({
         suggestions: [],
         index: 0,
         active: false,
         value: ""
     })
-
 
     const { suggestions, index, active, value} = state;
 
@@ -33,7 +34,7 @@ function Searchbar({data}) {
 
     const handleClick = (e) => {
         setState(currentstate => ({...currentstate, suggestions: [], active: true, value: e.target.innerText}))
-      };
+    };
     
     const handleKeyDown = (e) => {
         if (e.keyCode === 38) {
@@ -49,8 +50,8 @@ function Searchbar({data}) {
     
 
     return (
-        <>
-            <div className={molecules.searchbar}>
+        <div className={molecules.searchbar}>
+            <div className={molecules.searchbarcontainer}>
                 <div className={molecules.searchbarWrapper}>
                     <Input 
                         input={{
@@ -63,7 +64,7 @@ function Searchbar({data}) {
                 </div>
                 {active && <Suggestions suggestions={suggestions} index={index} handleClick={handleClick} />}
             </div>
-        </>
+        </div>
     )
 }
 

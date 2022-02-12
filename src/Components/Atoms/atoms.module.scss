@@ -1,15 +1,20 @@
 @use './../../styles/abstract' as theme;
 
-.input {
+input.input {
     border: none;
+    outline: none;
 }
 
 .suggestionsList {
     list-style: none;
     padding: 0;
     font-size: 0.85rem;
+
+    li {
+        padding: 0.7rem;
+    }
 }
 
 .activeSuggestion {
-    background-color: green;
+    background-color: var(--colors-neutral-700);
 }

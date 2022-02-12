@@ -1,19 +1,23 @@
-import PropTypes from "prop-types";
-import { Marker as LocationMarker } from 'react-leaflet';
+import { useRef, useEffect } from "react";
+import L from "leaflet";
 
-function Marker({marker}) {
-    return (
-        <LocationMarker position={marker.position}>
-            {marker.popup}
-        </LocationMarker>
-    )
+function Marker({markerPosition, mapRef}) {
+
+    const markerRef = useRef(null);
+    
+    useEffect(
+      () => {
+        if (markerRef.current) {
+          markerRef.current.setLatLng(markerPosition);
+        } else {
+          markerRef.current = L.marker(markerPosition).addTo(mapRef.current);
+        }
+      },
+      [markerPosition]
+    );
+
+    return null
+
 }
 
-Marker.propTypes = {
-    marker: PropTypes.shape({
-        position: PropTypes.oneOfType([PropTypes.number, PropTypes.number]),
-        popup: PropTypes.element.isRequired
-    })
-}
-
-export default Marker
+export default Marker;

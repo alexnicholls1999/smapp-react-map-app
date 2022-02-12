@@ -1,15 +1,16 @@
 @use './../../styles/abstract' as theme;
 
 .searchbar {
+    position: absolute;
     display: block;
-    width: min(75%, 20em);
+    width: min(75%, 25em);
     background-color: white;
     float: right;
     padding: 0.75rem;
     border-radius: 0.35rem;
-    margin-right: 2rem;
-    margin-top: 3rem;
+    right: 2rem;
     box-shadow: 0px 0px 10px 0px #00000026;
+    z-index: 9999;
 
     .searchbarWrapper {
         display: grid;
